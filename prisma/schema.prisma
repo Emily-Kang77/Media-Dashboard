@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Downside of using autoincrement is user can figure out ids.
+// Only mandatory value is 
+model Podcast {
+  id    String @id @default(cuid())
+  title String
+  creator String
+  slug String @unique
+  userReview String @default("")
+  createdAt DateTime @default(now()) // @map("created_at")
+
+  @@index(slug) // helpful if there's a lot of reads. ok.
+}
+
+model Post {
+  id String @id @default(cuid())
+  title String
+}
