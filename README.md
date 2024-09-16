@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is in-progress, hasn't reached its MVP yet. 
 
-## Getting Started
+Tech stack: React, NextJS, Prisma, Postgres, plan to deploy early on Vercel
 
-First, run the development server:
+# The Idea
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+There's several websites and apps that I go to for entertainment, like YouTube for videos or Spotify for podcasts. But they can often distract me from the content that I've subscribed to and I know that I enjoy. So I want this app to be a one-stop-shop where it's really easy to add podcasts, YouTube channels, or other media, and add ratings and categories for them. So I click one of the links and it directs me to the app/webpage I want to be at!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# MVP
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Use a podcast API to easily search new podcasts and add them, with metadata automatically filled in
+- Add user authentication
+- Make a homepage, folders
+- Have a sidebar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Later
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add recommendations from your existing media with a query like "I want to watch something educational" or "Give me something funny". 
