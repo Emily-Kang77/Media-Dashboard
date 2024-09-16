@@ -19,9 +19,20 @@ model Podcast {
   slug String @unique
   userReview String @default("")
   createdAt DateTime @default(now()) // @map("created_at")
+  // this wont become column at DB. But the user ID references id field of user model.
+  // User User? @relation(fields: [userId], references: [id])
+  // userId String
 
   @@index(slug) // helpful if there's a lot of reads. ok.
 }
+
+// 1 user can have many podcasts
+// model User {
+//   id String @id @default(cuid())
+//   email String @unique
+//   hashedPassword String
+//   subs Podcast[]
+// }
 
 model Post {
   id String @id @default(cuid())
