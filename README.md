@@ -11,6 +11,7 @@ There's several websites and apps that I go to for entertainment, like YouTube f
 - Use a podcast API to easily search new podcasts and add them, with metadata automatically filled in
 - Add user authentication
 - Make a homepage, folders
+- Have a sidebar
 
 # Later
 
