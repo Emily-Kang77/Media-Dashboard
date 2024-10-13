@@ -6,35 +6,54 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 // Downside of using autoincrement is user can figure out ids.
 // Only mandatory value is 
-model Podcast {
+// model Podcast {
+//   id    String @id @default(cuid())
+//   title String
+//   creator String
+//   slug String @unique
+//   userReview String @default("")
+//   createdAt DateTime @default(now()) // @map("created_at")
+//   // this wont become column at DB. But the user ID references id field of user model.
+//   // User User? @relation(fields: [userId], references: [id])
+//   // userId String
+
+//   @@index(slug) // helpful if there's a lot of reads. ok.
+// }
+
+model Media {
   id    String @id @default(cuid())
+  type String // podcast, youtube channel, etc... 
   title String
   creator String
   slug String @unique
   userReview String @default("")
   createdAt DateTime @default(now()) // @map("created_at")
-  // this wont become column at DB. But the user ID references id field of user model.
-  // User User? @relation(fields: [userId], references: [id])
-  // userId String
+  author User? @relation(fields: [authorId], references: [id])
+  authorId String?
+}
 
-  @@index(slug) // helpful if there's a lot of reads. ok.
+model Type {
+  id    String @id @default(cuid())
+  name String 
 }
 
 // 1 user can have many podcasts
-// model User {
-//   id String @id @default(cuid())
-//   email String @unique
-//   hashedPassword String
-//   subs Podcast[]
-// }
-
-model Post {
+model User {
   id String @id @default(cuid())
-  title String
+  name String 
+  email String
+  hashedPassword String
+  media Media[]
 }
+
+// model Post {
+//   id String @id @default(cuid())
+//   title String
+// }

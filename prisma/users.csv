@@ -1,0 +1,3 @@
+id,email,name,hashedPassword,media
+897457710235982,bob@example.com,bob,123,NULL
+24234710235234234,charlie@example.com,charlie,123,NULL

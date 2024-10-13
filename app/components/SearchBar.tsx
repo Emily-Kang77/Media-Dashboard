@@ -2,23 +2,23 @@
 
 import React, { useState } from 'react'
 import { ApolloClient } from '../lib/ApolloClient';
+import { randomUUID } from 'crypto';
 
+// import { handleSubmit } from  '../actions/apiActions';
 const SearchBar = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  const handleSubmit = (input: String) => {
-    // Uh oh... mixing server and client stuff. 
-  }
+
   
   return (
     <div>
 
-      <label className="input input-bordered flex items-center gap-2">
+      <label className="input input-bordered flex items-center gap-2 m-7">
         <input type="text" className="grow" placeholder="Search" 
         value={searchText} 
         onChange={(e) => setSearchText(e.target.value)}
-        onKeyDown={(e) => { if(e.key === "Enter")  handleSubmit(searchText)}}
+        // onKeyDown={(e) => { if(e.key === "Enter")  handleSubmit(searchText)}}
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
